@@ -1,5 +1,4 @@
 const pool = require('../config/db');
-const { v4: uuidv4 } = require('uuid') || { v4: () => 'ticket-' + Date.now() };
 
 class ParkingService {
   async getSlots() {

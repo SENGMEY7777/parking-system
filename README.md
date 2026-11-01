@@ -23,5 +23,5 @@ MVC + Service pattern:
 
 ## Scripts
 
-- `npm start`: Start production server
-- `npm run dev`: Start development server with nodemon
+- `npm start`: Start the server from `app.js`
+- `npm run dev`: Start the server from `app.js` with nodemon
