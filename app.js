@@ -14,6 +14,10 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'Smart Parking System API is live' });
+});
+
 app.use('/api/v1', parkingRoutes);
 
 app.use(errorHandler);
