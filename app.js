@@ -10,7 +10,7 @@ const errorHandler = require('./src/middlewares/errorHandler');
 
 const app = express();
 
-app.use(h`elmet()`);
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
@@ -36,9 +36,11 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(PORT, () => {
+if (!process.env.VERCEL) {
+  server.listen(PORT, () => {
   console.log(`Smart Parking Server running on port ${PORT}`);
-});
+  });
+}
 
 const gracefulShutdown = async (signal) => {
   console.log(`Received ${signal}. Shutting down gracefully...`);
